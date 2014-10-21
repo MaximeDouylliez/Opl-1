@@ -1,4 +1,4 @@
-package main.java.spoonProcessor;
+package spoonProcessor;
 
 import java.util.ArrayList;
 import java.util.List;

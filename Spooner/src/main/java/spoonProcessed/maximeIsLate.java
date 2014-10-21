@@ -1,4 +1,4 @@
-package main.java.spoonProcessed;
+package spoonProcessed;
 
 public class maximeIsLate {
 private int veryLate;

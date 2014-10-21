@@ -1,15 +1,11 @@
-package main.java.spoonProcessor;
+package spoonProcessor;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import spoon.processing.AbstractProcessor;
 import spoon.processing.Severity;
-import spoon.reflect.code.CtCatch;
-import spoon.reflect.code.CtCodeSnippetStatement;
 import spoon.reflect.declaration.CtClass;
-import spoon.reflect.factory.CodeFactory;
-import spoon.reflect.factory.Factory;
 
 /**
  * Reports warnings when empty catch blocks are found.
