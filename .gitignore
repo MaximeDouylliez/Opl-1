@@ -1,5 +1,23 @@
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
+
+
 *.class
-target
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
