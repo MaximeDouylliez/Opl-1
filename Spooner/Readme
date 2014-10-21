@@ -1,0 +1,2 @@
+java -cp target/classes/:spoon-core-2.3.1-jar-with-dependencies.jar spoon.Launcher -i ./src/main/java/spoonProcessed -p main.java.spoonProcessor.UpperCaseClassNameProcessor
+
