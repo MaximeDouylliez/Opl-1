@@ -1,2 +1,6 @@
 java -cp target/classes/:spoon-core-2.3.1-jar-with-dependencies.jar spoon.Launcher -i ./src/main/java/spoonProcessed -p main.java.spoonProcessor.UpperCaseClassNameProcessor
 
+
+
+Objectif: les trois plus grosses classes, les 5 plus grosses méthodes de chaque classe. un projet open source qui tourne -> conversion-> un projet open source qui tourne !
+
