@@ -1,18 +1,15 @@
 package spoonProcessed;
 
 
-
 public class maximeIsLate {
 
-private int veryLate;
+    private int veryLate;
 
 
+    public maximeIsLate() {
 
-public maximeIsLate() {
-		
 
-	}
-
+    }
 
 
 }
