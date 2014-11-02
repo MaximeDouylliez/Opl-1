@@ -4,3 +4,13 @@ java -cp target/classes/:spoon-core-2.3.1-jar-with-dependencies.jar spoon.Launch
 
 Objectif: les trois plus grosses classes, les 5 plus grosses méthodes de chaque classe. un projet open source qui tourne -> conversion-> un projet open source qui tourne !
 
+
+Il faut convertir les classes et les méthodes de ces classes:
+
+ArrayList    ------------->
+LinkedList   ------------->
+Map   ???    ------------->
+
+
+Il se trouve que l'Arraylist de guava est un ensemble de methodes statique manipulant l'objet java 'ArrayList'''' java.'
+
