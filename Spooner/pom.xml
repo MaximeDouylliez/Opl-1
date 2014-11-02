@@ -47,7 +47,7 @@
                     <mainClass>spoon.Launcher</mainClass>
                     <arguments>
                         <argument>-i</argument>
-                        <argument>src/main/java/</argument>
+                        <argument>src/main/java/spoonProcessed/</argument>
                         <argument>-p</argument>
                         <argument>spoonProcessor.LinkedListProcessor</argument>
                     </arguments>

@@ -21,12 +21,12 @@ public class LinkedListProcessor extends AbstractProcessor<CtVariable<java.util.
 
         LinkedList<String> transformation = Lists.newLinkedList();
         transformation.add(new String("Lists.newLinkedList()"));
-
+        System.out.println(transformation);
         //exp.replace(new CtExpression(transformation));
 //		CtExpression<LinkedList<String>> exp=element.getDefaultExpression();
 //		element.setDefaultExpression();
 
-        System.out.println(element.getSimpleName() + " " + element.getDefaultExpression() + "\n");
+       // System.out.println(element.getSimpleName() + " " + element.getDefaultExpression() + "\n");
 
     }
 

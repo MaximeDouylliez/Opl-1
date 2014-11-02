@@ -6,7 +6,7 @@
 .settings/
 target
 bin
-spooned
+spooned/
 
 # Intellij
 .idea/

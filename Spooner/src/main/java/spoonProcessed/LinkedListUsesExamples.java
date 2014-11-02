@@ -17,12 +17,12 @@ public class LinkedListUsesExamples {
 
         this.ls.add("hello");
         this.ls.addLast("Bye");
-        System.out.println("size: " + this.ls.size() + "\nIsEmpty?: " + this.ls.isEmpty());
+    //    System.out.println("size: " + this.ls.size() + "\nIsEmpty?: " + this.ls.isEmpty());
 
         this.ls.iterator();
         this.ls.removeFirst();
         this.ls.remove();
-        System.out.println("size: " + this.ls.size() + "\nIsEmpty?: " + this.ls.isEmpty());
+     //   System.out.println("size: " + this.ls.size() + "\nIsEmpty?: " + this.ls.isEmpty());
     }
 
 }
