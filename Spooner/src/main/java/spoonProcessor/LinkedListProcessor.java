@@ -2,6 +2,7 @@ package spoonProcessor;
 
 import com.google.common.collect.Lists;
 import spoon.processing.AbstractProcessor;
+import spoon.reflect.code.CtExpression;
 import spoon.reflect.declaration.CtVariable;
 
 import java.util.ArrayList;
@@ -21,10 +22,11 @@ public class LinkedListProcessor extends AbstractProcessor<CtVariable<java.util.
 
         LinkedList<String> transformation = Lists.newLinkedList();
         transformation.add(new String("Lists.newLinkedList()"));
-        System.out.println(transformation);
+       // System.out.println(transformation);
         //exp.replace(new CtExpression(transformation));
-//		CtExpression<LinkedList<String>> exp=element.getDefaultExpression();
-//		element.setDefaultExpression();
+		CtExpression<LinkedList<String>> exp=element.getDefaultExpression();
+        System.out.println("t||"+exp);
+		exp.set("Lists.newLinkedList()");
 
        // System.out.println(element.getSimpleName() + " " + element.getDefaultExpression() + "\n");
 
