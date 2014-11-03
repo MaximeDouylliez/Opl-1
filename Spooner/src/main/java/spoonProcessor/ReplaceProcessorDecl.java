@@ -10,7 +10,9 @@ import java.util.List;
 
     public class ReplaceProcessorDecl extends AbstractProcessor<CtVariable> {
         List<CtTypeReference<?>> actualTypeArguments;
+        
         CtTypeReference actualType;
+        
         public void process(CtVariable varDecl) {
             actualTypeArguments = varDecl.getType().getActualTypeArguments();
             actualType = varDecl.getType();
