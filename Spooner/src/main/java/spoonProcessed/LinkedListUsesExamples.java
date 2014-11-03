@@ -1,5 +1,6 @@
 package spoonProcessed;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class LinkedListUsesExamples {
@@ -12,6 +13,7 @@ public class LinkedListUsesExamples {
         ls = new LinkedList<String>();
     }
 
+    public static final ArrayList psf = new ArrayList();
 
     public void linkedListClassicsUses() {
 

@@ -49,7 +49,7 @@
                         <argument>-i</argument>
                         <argument>src/main/java/spoonProcessed/</argument>
                         <argument>-p</argument>
-                        <argument>spoonProcessor.LinkedListProcessor</argument>
+                        <argument>spoonProcessor.ListProcessor</argument>
                     </arguments>
                 </configuration>
             </plugin>
