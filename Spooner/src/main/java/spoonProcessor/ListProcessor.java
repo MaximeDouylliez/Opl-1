@@ -19,16 +19,16 @@ public class ListProcessor extends AbstractProcessor<CtVariable> {
      * @param element Read all CtVariables
      */
     public void process(CtVariable element) {
-        if (("LinkedList").equals(element.getDefaultExpression().getType().getSimpleName())) {
+        if (element.getDefaultExpression() != null){
+        String SElement = element.getDefaultExpression().getType().getSimpleName();
+        if (("LinkedList").equals(SElement)) {
             change(element, "Lists.newLinkedList()");
-        } else if (("ArrayList").equals(element.getDefaultExpression().getType().getSimpleName())) {
+        } else if (("ArrayList").equals(SElement)) {
             change(element, "Lists.newArrayList()");
         }
-    }
+    }}
 
     /**
-     * TODO
-     *
      * @param element CtVariables
      * @param s       Substitution String
      */

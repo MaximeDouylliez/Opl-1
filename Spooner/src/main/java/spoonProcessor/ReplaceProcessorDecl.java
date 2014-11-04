@@ -14,6 +14,30 @@ public class ReplaceProcessorDecl extends AbstractProcessor<CtConstructorImpl> {
 
 
     /**
+     * @return Return the first word
+     */
+    public static String returnInst(String string) {
+        String[] tab = string.split(" ");
+        String[] tab2 = string.split("=");
+        if (tab[0].length() > tab2[0].length()) return tab2[0];
+        return tab[0];
+    }
+
+    /**
+     * @return the text after "|"
+     */
+    public static String returnEnd(String s) {
+        return s.substring(s.lastIndexOf("|") + 1, s.length());
+    }
+
+    /**
+     * @return the text before "|"
+     */
+    public static String returnBeg(String s) {
+        return s.substring(0, s.lastIndexOf("|"));
+    }
+
+    /**
      * Replace all ArrayList in the constructor
      * ex :
      * A = new Arraylist....
@@ -21,18 +45,19 @@ public class ReplaceProcessorDecl extends AbstractProcessor<CtConstructorImpl> {
      * A.add(2)
      * to
      * A = Lists.newArrayList(1,2)
-     * @param element  Read all elements in Constructor
+     *
+     * @param element Read all elements in Constructor
      */
     @Override
     public void process(CtConstructorImpl element) {
 
         CtBlock body = element.getBody();
         List<CtStatement> statement = body.getStatements();
-        ArrayList<String> lines = new ArrayList<>();
-        ArrayList<String> arrayInst = new ArrayList<>();
-        ArrayList<String> finalInst = new ArrayList<>();
-        ArrayList<Integer> toRem = new ArrayList<>();
-        Map<String, String> map = new HashMap<>();
+        ArrayList<String> lines = new ArrayList();
+        ArrayList<String> arrayInst = new ArrayList();
+        ArrayList<String> finalInst = new ArrayList();
+        ArrayList<Integer> toRem = new ArrayList();
+        Map<String, String> map = new HashMap();
         int i = 0;
 
         /**
@@ -75,56 +100,41 @@ public class ReplaceProcessorDecl extends AbstractProcessor<CtConstructorImpl> {
 
         }
 
+
         /**
          * Replace the change to do
          */
-        i = 0;
-        for (CtStatement ct : statement) {
+        for (int n = 0; n < statement.size(); n++) {
             for (String s : finalInst) {
                 int j = Integer.parseInt(returnEnd(s));
-                if (i == j) {
-                    statement.set(i, getFactory().Code().createCodeSnippetStatement(returnBeg(s)));
+                if (n == j) {
+                    statement.set(n, getFactory().Code().createCodeSnippetStatement(returnBeg(s)));
                 }
 
             }
-            for (int k : toRem) {
-                if (i == k) {
-                    statement.set(i, getFactory().Code().createCodeSnippetStatement(""));
-                }
-            }
-            i++;
+
         }
 
+        /**
+         * Remove useless lines
+         */
+        int n = statement.size();
+        while (n > 0) {
+
+            if (toRem.contains(n)) {
+                statement.remove(n);
+                toRem.remove(toRem.indexOf(n));
+            } else {
+                n--;
+            }
+
+        }
+
+        /**
+         * Apply the change
+         */
         element.getBody().setStatements(statement);
 
-    }
-
-
-    /**
-     *
-     * @return Return the first word
-     */
-    public static String returnInst(String string) {
-        String[] tab = string.split(" ");
-        String[] tab2 = string.split("=");
-        if (tab[0].length() > tab2[0].length()) return tab2[0];
-        return tab[0];
-    }
-
-    /**
-     *
-     * @return the text after "|"
-     */
-    public static String returnEnd(String s) {
-        return s.substring(s.lastIndexOf("|") + 1, s.length());
-    }
-
-    /**
-     *
-     * @return the text before "|"
-     */
-    public static String returnBeg(String s) {
-        return s.substring(0, s.lastIndexOf("|"));
     }
 
     @Override

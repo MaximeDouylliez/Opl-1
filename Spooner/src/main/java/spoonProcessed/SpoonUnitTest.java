@@ -16,27 +16,27 @@ public class SpoonUnitTest {
 
     //Immutable
     public static final ArrayList arr = new ArrayList();
-    public static final LinkedList<Integer> lin = new LinkedList<>();
+    public static final LinkedList<Integer> lin = new LinkedList();
 
     public SpoonUnitTest(){
         int inte=6;
         ls = new LinkedList<String>();
         fal= new ArrayList<String>();
         ls2 = new LinkedList<Integer>();
-        ls3 = new LinkedList<>();
+        ls3 = new LinkedList();
         fal2 = new ArrayList<Integer>();
-        fal3 = new ArrayList<>();
+        fal3 = new ArrayList();
 
-        this.ls2.add(99);
-        this.ls.add("hello");
-        this.ls2.add(1);
-        this.ls3.add(15);
-        this.fal.add("hello2");
-        this.fal.add("hello3");
-        this.fal2.add(2);
-        this.fal3.add(1);
-        this.arr.add('r');
-        this.lin.add(9);
+        ls2.add(99);
+        ls.add("hello");
+        ls2.add(1);
+        ls3.add(15);
+        fal.add("hello2");
+        fal.add("hello3");
+        fal2.add(2);
+        fal3.add(1);
+        arr.add('r');
+        lin.add(9);
     }
 
     public void linkedListClassicsUses() {
