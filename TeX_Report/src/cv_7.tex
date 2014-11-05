@@ -71,6 +71,7 @@ Nowadays, IDE are intensively used to develop programs.  IDE allows
 the developer to design better programs by using a set of useful tools
 while staying in the same environment. IDE usually includes
 refactoring functions as a tools to speed up code manipulation safely.
+\newline
 
 
 While most IDE users don't use all implemented refactorings, Some
@@ -79,11 +80,12 @@ mainstream IDE. Moreover, there are some specific refactoring that can
 be very useful to a specific project, but it's up to the project Team
 to create such a refactoring. What tools a developer can use to create
 his own refactoring in Java?
+\newline
 
 This project aims at developing a refactoring that converts Java
 source code using JDK collection to a source code using Guava
 collection.
-
+\newpage
 
 
 \section{Context}
@@ -95,13 +97,16 @@ will be presented in this part.
 \subsection{What is Spoon ?}
 Spoon is a framework for the analysis and transformation of Java
 source Code. It can be used to write specific analyses and
-transformation far more easily than with other tools.  Spoon user
+transformation far more easily than with other tools. Spoon user
 writes his domain specific analysis and transformation in Java ,
-avoiding to learn another language to process Java source code. Spoon
-API allows to manipulate an abstract tree syntax containing all
+avoiding to learn another language to process Java source code. 
+
+\newline Spoon API allows to manipulate an abstract tree syntax containing all
 meaningful informations of a Java source code in order to extract
 informations, edit, remove, add part of Java code and generate
 modified source code.
+
+\newline
 Spoon project site can be found at \url{http://spoon.gforge.inria.fr/}
 
 \subsection{why guava ?}
@@ -110,12 +115,12 @@ Guava is the open-sourced version of Google's core Java libraries.
 Libraries let you use easily a set of functions that you don't need to
 write and test. 
 Guava have been heavily tested and optimized by Google's developers
-and is used intensively.
+and is used intensively.\newline
 
 The JDK Collections API, is widely used amongst developers and has
 simplified collections use. 
 Guava aims to make working in the Java language faster and easier by
-creating new classes or working around JDK classes.
+creating new classes or working around JDK classes.\newline
 
 For instance, The JDK offers to create a unmodifiable collection from
 a mutable collection. But it actually returns a view of the original
@@ -123,11 +128,10 @@ collection. Change the mutable collection and the unmodifiable
 collection will be too. Developers often use unmodifiable collections
 as a base to create immutable collections. Guava offers you to create
 truly immutable and distinct version of a collection from a mutable
-collection or directly by instantiation.
+collection or directly by instantiation.\newline
 
-\newpage
-\section{JDK}
 
+For instance,this is how to create an immutable List with JDK then with Guava.
 \begin{verbatim}
 List<String> COLOR_NAMES = new ArrayList<String>();
 COLOR_NAME.add("red");.....
@@ -141,11 +145,11 @@ Guava
 ImmutableSet<String> COLOR_NAMES = ImmutableSet.of(  
 "red",  "orange","yellow",  "green",  "blue",  "purple");
 
-exemple: JDK VS Guava : create an immutable List.
+
 \end{verbatim}
 
 Guava pushes interesting part of JDK further in order to make the life
-of a java developer smoother.
+of a java developer smoother.\newline
 
 Guava libraries can be found at \url{https://code.google.com/p/guava-libraries/}
 
@@ -153,12 +157,13 @@ Guava libraries can be found at \url{https://code.google.com/p/guava-libraries/}
 \subsection{Boundaries}
 Doing the entire refactoring can represent a huge amount of work to be
 done smartly because several lines of "JDK code" can be converted into
-a single line of "Guava code".
+a single line of "Guava code".\newline
 
 Furthermore, due to the multiple manners (good or esoterics) to write
 a process logic,  determine the complete set of code patterns that `
-do something' can be unproductive. That's why refactoring code
-patterns have to accept a certain level of inaccuracy , discussed in
+do something' can be unproductive. \newline
+
+That's why refactoring code patterns have to accept a certain level of inaccuracy , discussed in
 pattern code detections part. 
 
 \subsection{Refactoring Arraylist and LinkedList Instantiation}
@@ -200,17 +205,16 @@ getFactory().Code().createCodeSnippetExpression(s);
 \end{verbatim}
 
 We replace the old expression by the new one and the transformation is
-done.
-
-\subsection{Code patterns detections and transformations}
+done.\newline
 
 To go further into refactoring, we need to use code patterns analysis,
 in the next subsection.
-Code patterns detections and transformations 
+
+\subsection{Code patterns detections and transformations}
 
 This part focus on code patterns detections and transformations in
 order to translate it to a single Guava call. It offers a glimpse of
-what Spoon is capable of.
+what Spoon is capable of.\newline
 
 In Java, with JDK, you have to create a List, then you can add
 elements inside:
@@ -244,11 +248,11 @@ ls.add(1)
 
 
 Check Statement and possible interactions with processed list by
-another references of them is another pain.
+another references of them is another pain.\newline
 
 Check three types of invocation on a same list that might influence
 the final order of parameters is quite hard to implement and should
-not be encountered in well written classes. 
+not be encountered in well written classes. \newline
 
 
 
@@ -259,10 +263,10 @@ our processor will preserve initial programming logic:
 In the constructor only, you can create as many lists as you want to,
 then only use as many list.add () as you want with other variables
 instructions. Within these other instructions do not interact with
-processed lists.
+processed lists.\newline
 
 In the \nameref{app:one}, there is an example of most complex Java Source code
-successfully processed by our processor.
+successfully processed by our processor.\newline
 
 The limitation "Constructor only" come from different Methods and
 Constructor representation  in Spoon metamodel. CtConstructor and
