@@ -99,14 +99,14 @@ Spoon is a framework for the analysis and transformation of Java
 source Code. It can be used to write specific analyses and
 transformation far more easily than with other tools. Spoon user
 writes his domain specific analysis and transformation in Java ,
-avoiding to learn another language to process Java source code. 
+avoiding to learn another language to process Java source
+code. \newline 
 
-\newline Spoon API allows to manipulate an abstract tree syntax containing all
+Spoon API allows to manipulate an abstract tree syntax containing all
 meaningful informations of a Java source code in order to extract
 informations, edit, remove, add part of Java code and generate
-modified source code.
+modified source code.\newline
 
-\newline
 Spoon project site can be found at \url{http://spoon.gforge.inria.fr/}
 
 \subsection{why guava ?}
@@ -120,8 +120,9 @@ and is used intensively.\newline
 The JDK Collections API, is widely used amongst developers and has
 simplified collections use. 
 Guava aims to make working in the Java language faster and easier by
-creating new classes or working around JDK classes.\newline
+creating new classes or working around JDK classes.
 
+\newpage
 For instance, The JDK offers to create a unmodifiable collection from
 a mutable collection. But it actually returns a view of the original
 collection. Change the mutable collection and the unmodifiable
@@ -153,6 +154,7 @@ of a java developer smoother.\newline
 
 Guava libraries can be found at \url{https://code.google.com/p/guava-libraries/}
 
+\newpage
 \section{Contribution}
 \subsection{Boundaries}
 Doing the entire refactoring can represent a huge amount of work to be
@@ -174,7 +176,6 @@ are easy and the Guava resulted is of little interest when java 7 or
 over is used. Theses functions are quoted as "Not all Guava features
 have much utility (see e.g. Lists.newArrayList)",cf
 (\url{https://code.google.com/p/guava-libraries/wiki/PhilosophyExplained})
-\newpage
 
 Before Java 7, compiler could not infer of parameterizable classes
 instantiation types. for instance:
@@ -231,7 +232,7 @@ Guava offers a more pleasant way to do this:
 ArrayList<String>() list =
 Lists.newArrayList("First","Second","Third","Fourth");
 \end{verbatim}
-\newpage
+
 The major issue encountered during analysis phase is that you might
 encounter this code to analyse:
 
