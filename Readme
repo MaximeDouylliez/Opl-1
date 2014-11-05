@@ -5,4 +5,5 @@ Douylliez Maxime
 mvn install
 mvn exec:java
 
-(for the first launch the test can return an exception (spooned directory not create) dont care about it)
+To change the spoon processor edit the pom.xml:
+ spoonProcessor.ReplaceProcessorDecl to spoonProcessor.ListProcessor
