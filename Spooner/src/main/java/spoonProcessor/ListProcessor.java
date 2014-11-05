@@ -19,12 +19,14 @@ public class ListProcessor extends AbstractProcessor<CtVariable> {
      * @param element Read all CtVariables
      */
     public void process(CtVariable element) {
+        String imp ="com.google.common.collect.";
+
         if (element.getDefaultExpression() != null){
         String SElement = element.getDefaultExpression().getType().getSimpleName();
         if (("LinkedList").equals(SElement)) {
-            change(element, "Lists.newLinkedList()");
+            change(element, imp+"Lists.newLinkedList()");
         } else if (("ArrayList").equals(SElement)) {
-            change(element, "Lists.newArrayList()");
+            change(element, imp+"Lists.newArrayList()");
         }
     }}
 

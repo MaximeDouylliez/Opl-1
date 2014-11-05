@@ -1,5 +1,6 @@
 package spoonProcessed;
 
+import com.google.common.collect.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
@@ -8,7 +9,7 @@ public class SpoonUnitTest {
     private LinkedList<String> ls;
     private LinkedList<Integer> ls2;
     private final LinkedList<Integer> ls3;
-
+    private ArrayList test = Lists.newArrayList(1,2);
     //ArrayList
     public ArrayList<String> fal;
     private ArrayList<Integer> fal2;
@@ -19,7 +20,6 @@ public class SpoonUnitTest {
     public static final LinkedList<Integer> lin = new LinkedList();
 
     public SpoonUnitTest(){
-        int inte=6;
         ls = new LinkedList<String>();
         fal= new ArrayList<String>();
         ls2 = new LinkedList<Integer>();
@@ -50,7 +50,12 @@ public class SpoonUnitTest {
         this.fal3.add(100);
         this.arr.add('r');
         this.lin.add(900);
+        this.test.add(3);
 
+    }
+    public static void main(String[]args){
+        SpoonUnitTest sp = new SpoonUnitTest();
+        sp.linkedListClassicsUses();
     }
 
 }

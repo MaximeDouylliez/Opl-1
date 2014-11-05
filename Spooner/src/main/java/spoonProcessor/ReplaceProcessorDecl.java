@@ -51,6 +51,7 @@ public class ReplaceProcessorDecl extends AbstractProcessor<CtConstructorImpl> {
     @Override
     public void process(CtConstructorImpl element) {
 
+        String imp ="com.google.common.collect.";
         CtBlock body = element.getBody();
         List<CtStatement> statement = body.getStatements();
         ArrayList<String> lines = new ArrayList();
@@ -95,7 +96,7 @@ public class ReplaceProcessorDecl extends AbstractProcessor<CtConstructorImpl> {
                 }
             }
             if (!be.equals("")) {
-                finalInst.add(be + "= Lists.newArrayList(" + ph + ")" + "|" + map.get(be));
+                finalInst.add(be + "= "+imp+"Lists.newArrayList(" + ph + ")" + "|" + map.get(be));
             }
 
         }
